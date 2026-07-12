@@ -9,6 +9,7 @@
   description: "Attempts to decrypt password-protected PDF files using a configurable password library. Successful passwords can be remembered for future runs, making bulk recovery straightforward when dealing with recurring documents."
   links:
     github: "https://github.com/antimatt3r/unbolt"
+    demo: "https://unbolt.somehow.work"
 
 - title: "Pixelchemy"
   tagline: "A toolbox for practical image processing"
