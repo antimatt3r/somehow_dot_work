@@ -1,0 +1,4 @@
+baseURL: "https://somehow.work/"
+languageCode: "en-us"
+title: "somehow.work"
+disableKinds: ["taxonomy", "term"] # Keep site static and simple

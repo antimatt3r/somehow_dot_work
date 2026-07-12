@@ -1,0 +1,29 @@
+- title: "AlbumFS"
+  tagline: "Static photo albums from an ordinary folder hierarchy"
+  description: "A static site generator for photographers, hikers and travellers that uses the filesystem as its source of truth. Supports maps, elevation profiles and multi-site publishing, with a lightweight admin interface for managing albums and uploads on the go."
+  links:
+    github: "https://github.com/antimatt3r/AlbumFS"
+
+- title: "Unbolt"
+  tagline: "Recover password-protected PDFs"
+  description: "Attempts to decrypt password-protected PDF files using a configurable password library. Successful passwords can be remembered for future runs, making bulk recovery straightforward when dealing with recurring documents."
+  links:
+    github: "https://github.com/antimatt3r/unbolt"
+
+- title: "Pixelchemy"
+  tagline: "A toolbox for practical image processing"
+  description: "A growing collection of utilities including document enhancement, passport photo generation, background removal, smart resizing, poster printing and printable photo layouts."
+  links: {}
+
+- title: "Crypto Tax Hub"
+  tagline: "Simplifying cryptocurrency tax reporting in India"
+  description: "Generates capital gains reports required for Indian income tax filing from supported exchange exports. Designed to make tax reporting repeatable, transparent and less error-prone."
+  links:
+    website: "https://crypto-tax-hub.somehow.work"
+
+- title: "EPF Optimization Engine"
+  tagline: "Make informed EPF and NPS contribution decisions"
+  description: "Models contribution strategies to help maximize long-term wealth accumulation while accounting for EPF and NPS allocations under current Indian regulations."
+  links:
+    website: "https://epf-optimizer.somehow.work"
+    github: "https://github.com/antimatt3r/epf-optimizer"

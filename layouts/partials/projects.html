@@ -1,0 +1,32 @@
+<section id="projects" class="projects-section">
+  {{ range $index, $element := .Site.Data.projects }}
+    {{ if $index }}
+      <hr class="project-divider">
+    {{ end }}
+    <article class="project-entry">
+      <header class="project-header">
+        <h2 class="project-title">{{ .title }}</h2>
+        <p class="project-tagline">{{ .tagline }}</p>
+      </header>
+      <div class="project-description">
+        <p>{{ .description }}</p>
+      </div>
+      {{ if .links }}
+        <div class="project-links">
+          {{ if .links.website }}
+            <a href="{{ .links.website }}" class="project-link" target="_blank" rel="noopener">Website</a>
+          {{ end }}
+          {{ if .links.github }}
+            <a href="{{ .links.github }}" class="project-link" target="_blank" rel="noopener">GitHub</a>
+          {{ end }}
+          {{ if .links.demo }}
+            <a href="{{ .links.demo }}" class="project-link" target="_blank" rel="noopener">Demo</a>
+          {{ end }}
+          {{ if .links.documentation }}
+            <a href="{{ .links.documentation }}" class="project-link" target="_blank" rel="noopener">Documentation</a>
+          {{ end }}
+        </div>
+      {{ end }}
+    </article>
+  {{ end }}
+</section>
