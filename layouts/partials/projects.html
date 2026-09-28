@@ -1,32 +1,36 @@
-<section id="projects" class="projects-section">
-  {{ range $index, $element := .Site.Data.projects }}
-    {{ if $index }}
-      <hr class="project-divider">
-    {{ end }}
-    <article class="project-entry">
-      <header class="project-header">
-        <h2 class="project-title">{{ .title }}</h2>
-        <p class="project-tagline">{{ .tagline }}</p>
+{{ range site.Data.projects }}
+<section class="project-group">
+  <h2 class="category-heading">{{ .category }}</h2>
+  <div class="project-grid">
+    {{ range .projects }}
+    <article class="project-card">
+      <header class="card-header">
+        <h3 class="project-title">{{ .title }}</h3>
+        {{ with .tags }}
+          <div class="badge-group">
+            {{ range . }}
+              <span class="delivery-badge">{{ . }}</span>
+            {{ end }}
+          </div>
+        {{ else }}
+          {{ with .delivery }}
+            <div class="badge-group">
+              <span class="delivery-badge">{{ . }}</span>
+            </div>
+          {{ end }}
+        {{ end }}
       </header>
-      <div class="project-description">
-        <p>{{ .description }}</p>
-      </div>
+      <p class="project-tagline">{{ .tagline }}</p>
+      <p class="project-description">{{ .description }}</p>
       {{ if .links }}
-        <div class="project-links">
-          {{ if .links.website }}
-            <a href="{{ .links.website }}" class="project-link" target="_blank" rel="noopener">Website</a>
-          {{ end }}
-          {{ if .links.github }}
-            <a href="{{ .links.github }}" class="project-link" target="_blank" rel="noopener">GitHub</a>
-          {{ end }}
-          {{ if .links.demo }}
-            <a href="{{ .links.demo }}" class="project-link" target="_blank" rel="noopener">Demo</a>
-          {{ end }}
-          {{ if .links.documentation }}
-            <a href="{{ .links.documentation }}" class="project-link" target="_blank" rel="noopener">Documentation</a>
-          {{ end }}
-        </div>
+      <nav class="project-links">
+        {{ range $key, $url := .links }}
+          <a href="{{ $url }}" class="project-link" target="_blank" rel="noopener">{{ $key | humanize }}</a>
+        {{ end }}
+      </nav>
       {{ end }}
     </article>
-  {{ end }}
+    {{ end }}
+  </div>
 </section>
+{{ end }}
