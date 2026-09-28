@@ -1,7 +1,7 @@
 - category: "Photography & Media"
   projects:
     - title: "AlbumFS"
-      tags: ["Self-Hosted", "Web Tool"]
+      tags: ["Self-Hosted", "Web"]
       tagline: "Static photo albums from an ordinary folder hierarchy"
       description: "A static site generator for photographers, hikers and travellers that uses the filesystem as its source of truth. Supports maps, elevation profiles and multi-site publishing, with a lightweight admin interface for managing albums and uploads on the go."
       links:
@@ -9,7 +9,7 @@
         demo: "https://albumfs.somehow.work"
 
     - title: "Pixelchemy"
-      tags: ["Web Tool"]
+      tags: ["Web"]
       tagline: "A toolbox for practical image processing"
       description: "A growing collection of utilities including document enhancement, passport photo generation, background removal, smart resizing, poster printing and printable photo layouts."
       links:
@@ -18,7 +18,7 @@
 - category: "Utilities & Security"
   projects:
     - title: "Unbolt"
-      tags: ["Local Tool", "Self-Hosted"]
+      tags: ["Self-Hosted", "Web", "CLI", "Offline"]
       tagline: "Recover password-protected PDFs"
       description: "Attempts to decrypt password-protected PDF files using a configurable password library. Successful passwords can be remembered for future runs, making bulk recovery straightforward when dealing with recurring documents."
       links:
@@ -26,7 +26,7 @@
         demo: "https://unbolt.somehow.work"
 
     - title: "Secret URI"
-      tags: ["Local Tool"]
+      tags: ["Library"]
       tagline: "Unified, provider-agnostic secret resolution"
       description: "A CLI and Python toolkit for fetching secrets across different backends using standard, queryable URI strings. Allows centralization of secrets and safe checking in of config files."
       links: {}
@@ -40,14 +40,14 @@
 - category: "Personal Finance"
   projects:
     - title: "Crypto Tax Hub"
-      tags: ["Web Tool"]
+      tags: ["Web"]
       tagline: "Simplifying cryptocurrency tax reporting in India"
       description: "Generates capital gains reports required for Indian income tax filing from supported exchange exports. Designed to make tax reporting repeatable, transparent and less error-prone."
       links:
         website: "https://crypto-tax-hub.somehow.work"
 
     - title: "EPF Optimization Engine"
-      tags: ["Web Tool", "Self-Hosted"]
+      tags: ["Self-Hosted", "Web", "Offline"]
       tagline: "Make informed EPF and NPS contribution decisions"
       description: "Models contribution strategies to help maximize long-term wealth accumulation while accounting for EPF and NPS allocations under current Indian regulations."
       links:
