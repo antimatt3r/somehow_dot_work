@@ -1,0 +1,11 @@
+public/
+resources/
+.hugo_build.lock
+.git/
+.gitignore
+.gemini/
+.DS_Store
+Dockerfile
+.dockerignore
+run.sh
+shell/

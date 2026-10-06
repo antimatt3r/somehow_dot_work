@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multi-Column App — somehow.work Shell Example</title>
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/shell.css">
+  <link rel="stylesheet" href="../css/tables.css">
+</head>
+<body>
+
+  <!-- Universal Header -->
+  <app-header></app-header>
+
+  <!-- Multi-Column Layout (Sidebar + Main Content) -->
+  <main class="layout-multi-column">
+    <aside class="app-sidebar">
+      <h3 style="font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.04em; color: var(--color-text-muted); margin-bottom: var(--space-3);">Navigation</h3>
+      <nav style="display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--text-sm);">
+        <a href="#overview" style="color: var(--color-accent); text-decoration: none; font-weight: 500;">Overview</a>
+        <a href="#modules" style="color: var(--color-text-muted); text-decoration: none;">Active Modules</a>
+        <a href="#settings" style="color: var(--color-text-muted); text-decoration: none;">Configuration</a>
+      </nav>
+    </aside>
+
+    <div class="app-content">
+      <!-- Notice (Demo Mode) -->
+      <app-notice></app-notice>
+
+      <section style="margin-bottom: var(--space-6);">
+        <h2 style="font-size: var(--text-lg); font-weight: 600; margin-bottom: var(--space-2);">Multi-Column Workspace</h2>
+        <p style="color: var(--color-text-muted); font-size: var(--text-sm); line-height: 1.6;">
+          Two-column grid layout pairing a responsive sidebar with an expansive content area. Ideal for complex administration tools, file managers, and multi-step workflows. Automatically collapses into a stacked mobile layout below 768px.
+        </p>
+      </section>
+    </div>
+  </main>
+
+  <!-- Universal Footer -->
+  <app-footer></app-footer>
+
+  <script>
+    window.SITE_CONFIG = {
+      name: "Studio",
+      namePlain: "Stu",
+      nameAccent: "dio",
+      subtitle: "Multi-column modular workspace template",
+      networkUrl: "https://somehow.work",
+      networkLabel: "somehow.work",
+      repoUrl: "https://github.com/somehow-work/studio",
+      issuesUrl: "https://github.com/somehow-work/studio/issues",
+      notice: {
+        variant: "demo",
+        lead: "Demonstration deployment.",
+        body: "Sandbox storage resets every 24 hours. Export your workspace before disconnecting."
+      }
+    };
+  </script>
+  <script src="../js/shell.js"></script>
+</body>
+</html>

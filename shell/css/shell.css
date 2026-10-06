@@ -1,0 +1,273 @@
+/* ==========================================================================
+   somehow.work Shell Styles
+   Reusable application header, notices, footer, status labels, and layouts
+   ========================================================================== */
+
+/* Base Viewport & Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* App Header */
+.app-header {
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface);
+  width: 100%;
+}
+
+.app-header-inner {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: var(--space-4) var(--space-6);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.layout-full-width .app-header-inner {
+  max-width: 100%;
+  padding: var(--space-4) var(--space-8);
+}
+
+.app-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.app-wordmark {
+  font-family: var(--font-sans);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  line-height: 1.2;
+  text-decoration: none;
+}
+
+.app-wordmark .brand-accent {
+  color: var(--color-accent);
+}
+
+.app-subtitle {
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  line-height: 1.4;
+}
+
+.app-header-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.network-link {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.network-link:hover {
+  color: var(--color-accent);
+}
+
+/* Status Label Component */
+.status-label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-sm);
+}
+
+.status-label.connecting {
+  color: var(--color-text-muted);
+}
+
+.status-label.error {
+  color: var(--color-error);
+  background: var(--color-error-bg);
+  border: 1px solid var(--color-error-border);
+}
+
+.status-label .retry-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--color-accent);
+  text-decoration: underline;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* App Notice Component */
+.app-notice {
+  border-radius: var(--radius-lg);
+  padding: var(--space-3) var(--space-4);
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  line-height: 1.5;
+  margin: var(--space-4) 0;
+}
+
+.app-notice.disclaimer {
+  background: var(--color-notice-disclaimer-bg);
+  border: 1px solid var(--color-notice-disclaimer-border);
+  color: var(--color-notice-disclaimer-text);
+}
+
+.app-notice.demo {
+  background: var(--color-notice-demo-bg);
+  border: 1px solid var(--color-notice-demo-border);
+  color: var(--color-notice-demo-text);
+}
+
+.app-notice .notice-lead {
+  font-weight: 600;
+}
+
+.app-notice.disclaimer .notice-lead {
+  color: var(--color-notice-disclaimer-lead);
+}
+
+.app-notice.demo .notice-lead {
+  color: var(--color-notice-demo-lead);
+}
+
+/* App Footer Component */
+.app-footer {
+  border-top: 1px solid var(--color-border);
+  background: var(--color-surface);
+  margin-top: auto;
+  width: 100%;
+}
+
+.app-footer-inner {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: var(--space-4) var(--space-6);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.layout-full-width .app-footer-inner {
+  max-width: 100%;
+  padding: var(--space-4) var(--space-8);
+}
+
+.app-footer-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.app-footer-right a {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.app-footer-right a:hover {
+  color: var(--color-accent);
+}
+
+.footer-dot {
+  color: var(--color-border);
+}
+
+/* ==========================================================================
+   Layout Modes
+   ========================================================================== */
+
+/* 1. Single-Column Layout (Default, e.g. Aushadh) */
+.layout-single-column {
+  width: 100%;
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: var(--space-4) var(--space-6) var(--space-10);
+  flex: 1;
+}
+
+/* 2. Multi-Column Layout (Sidebar + Main Content Area) */
+.layout-multi-column {
+  width: 100%;
+  max-width: calc(var(--content-max-width) + var(--sidebar-width) + var(--space-8));
+  margin: 0 auto;
+  padding: var(--space-6);
+  flex: 1;
+  display: grid;
+  grid-template-columns: var(--sidebar-width) 1fr;
+  gap: var(--space-8);
+  align-items: start;
+}
+
+.app-sidebar {
+  border-right: 1px solid var(--color-border);
+  padding-right: var(--space-6);
+}
+
+.app-content {
+  min-width: 0; /* Prevents overflow in grid items */
+}
+
+@media (max-width: 768px) {
+  .layout-multi-column {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    padding: var(--space-4);
+  }
+
+  .app-sidebar {
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
+    padding-right: 0;
+    padding-bottom: var(--space-4);
+  }
+}
+
+/* 3. Full-Width Layout (100% fluid viewports, canvases, dashboards) */
+.layout-full-width {
+  width: 100%;
+  padding: var(--space-6) var(--space-8);
+  flex: 1;
+}
+
+@media (max-width: 640px) {
+  .layout-single-column,
+  .layout-full-width {
+    padding: var(--space-3) var(--space-4) var(--space-8);
+  }
+
+  .app-header-inner,
+  .app-footer-inner {
+    padding: var(--space-3) var(--space-4);
+  }
+}

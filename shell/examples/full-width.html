@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Full-Width Tool — somehow.work Shell Example</title>
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/shell.css">
+  <link rel="stylesheet" href="../css/tables.css">
+</head>
+<body>
+
+  <!-- Universal Header -->
+  <app-header></app-header>
+
+  <!-- Full-Width 100% Fluid Viewport Layout -->
+  <main class="layout-full-width">
+    <!-- Notice is null in config, so app-notice renders nothing -->
+    <app-notice></app-notice>
+
+    <div style="border: 1px dashed var(--color-border); border-radius: var(--radius-lg); padding: var(--space-8); text-align: center; background: var(--color-surface);">
+      <h2 style="font-size: var(--text-lg); font-weight: 600; margin-bottom: var(--space-2);">Full-Width Fluid Canvas</h2>
+      <p style="color: var(--color-text-muted); font-size: var(--text-sm); max-width: 600px; margin: 0 auto;">
+        Spans 100% of the viewport width with standard edge padding. Ideal for image processors (like Pixelchemy), interactive map viewers, visual diagram editors, and data visualization dashboards.
+      </p>
+    </div>
+  </main>
+
+  <!-- Universal Footer: notice repoUrl is empty, so GitHub link is completely omitted -->
+  <app-footer></app-footer>
+
+  <script>
+    window.SITE_CONFIG = {
+      name: "Pixelchemy",
+      namePlain: "Pixel",
+      nameAccent: "chemy",
+      subtitle: "Full-width fluid image and document editor",
+      networkUrl: "https://somehow.work",
+      networkLabel: "somehow.work",
+      repoUrl: "", // No public GitHub repo; footer link automatically omitted
+      issuesUrl: "https://github.com/somehow-work/support/issues",
+      notice: null // No notice rendered
+    };
+  </script>
+  <script src="../js/shell.js"></script>
+</body>
+</html>

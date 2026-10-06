@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Single-Column App — somehow.work Shell Example</title>
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/shell.css">
+  <link rel="stylesheet" href="../css/tables.css">
+</head>
+<body>
+
+  <!-- Universal Header -->
+  <app-header></app-header>
+
+  <!-- Single-Column Centered Layout -->
+  <main class="layout-single-column">
+    <!-- Notice -->
+    <app-notice></app-notice>
+
+    <section style="margin: var(--space-6) 0;">
+      <h2 style="font-size: var(--text-lg); font-weight: 600; margin-bottom: var(--space-2);">Single-Column Content</h2>
+      <p style="color: var(--color-text-muted); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+        Centered layout with max-width (default 1000px). Ideal for search engines, calculators, single-purpose utilities, and long-form technical content.
+      </p>
+
+      <!-- Example Table with Mobile Card transformation -->
+      <div class="table-container">
+        <table>
+          <caption class="sr-only">Example Data Table</caption>
+          <thead>
+            <tr>
+              <th style="width: 120px;">Identifier</th>
+              <th>Name</th>
+              <th style="width: 120px;">Category</th>
+              <th style="width: 140px; text-align: right;">Unit Metric</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="col-code">ITEM-001</td>
+              <td class="col-primary">Alpha Service Component</td>
+              <td data-label="Category" style="color: var(--color-text-muted); font-size: var(--text-xs);">Infrastructure</td>
+              <td class="col-price" data-label="Metric">0.42 ms<span class="unit-qualifier">/ req</span></td>
+            </tr>
+            <tr>
+              <td class="col-code">ITEM-002</td>
+              <td class="col-primary">Beta Ingestion Pipeline</td>
+              <td data-label="Category" style="color: var(--color-text-muted); font-size: var(--text-xs);">Data Flow</td>
+              <td class="col-price" data-label="Metric">1.18 ms<span class="unit-qualifier">/ req</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- Universal Footer -->
+  <app-footer></app-footer>
+
+  <script>
+    window.SITE_CONFIG = {
+      name: "SearchEngine",
+      namePlain: "Search",
+      nameAccent: "Engine",
+      subtitle: "Deterministic single-column reference application",
+      networkUrl: "https://somehow.work",
+      networkLabel: "somehow.work",
+      repoUrl: "https://github.com/somehow-work/example",
+      issuesUrl: "https://github.com/somehow-work/example/issues",
+      notice: {
+        variant: "disclaimer",
+        lead: "Informational use only.",
+        body: "Calculations and metrics displayed are illustrative and subject to change."
+      }
+    };
+  </script>
+  <script src="../js/shell.js"></script>
+</body>
+</html>
