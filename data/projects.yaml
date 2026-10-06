@@ -15,6 +15,21 @@
       links:
         website: "https://pixelchemy.somehow.work"
 
+- category: "Health & Medicine"
+  projects:
+    - title: "Aushadh"
+      tags: ["Self-Hosted", "Web", "Offline"]
+      tagline: "Generic medicine substitution for Indian pharmaceuticals"
+      description: "An offline-first engine that maps commercial branded formulations to their active generic constituents, matching them directly with bio-equivalent, low-cost Jan Aushadhi (PMBJP) alternatives."
+      links:
+        website: "https://aushadh.somehow.work"
+
+    - title: "Swastha"
+      tags: ["Self-Hosted", "Web"]
+      tagline: "Sovereign personal and family medical vault"
+      description: "A self-hosted personal and family health records vault designed for privacy-first storage of clinical summaries, diagnostic reports, and medical documents with immutable deduplication."
+      links: {}
+
 - category: "Utilities & Security"
   projects:
     - title: "Unbolt"
