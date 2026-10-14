@@ -14,9 +14,13 @@ window.SITE_CONFIG = {
   networkUrl: "https://somehow.work",
   networkLabel: "somehow.work",
 
-  // Repository links (Optional: omit or set to null/empty string if not open-source)
-  repoUrl: "https://github.com/somehow-work/pixelchemy",
-  issuesUrl: "https://github.com/somehow-work/pixelchemy/issues",
+  // Open Source & Repository Configuration:
+  // Set openSource to true to display GitHub and Issue tracker links.
+  // If false (or repoUrl is omitted), GitHub is omitted and "Report an Issue"
+  // automatically falls back to mailto:report-<appname>@somehow.work.
+  openSource: true,
+  repoUrl: "https://github.com/antimatt3r/pixelchemy",
+  issuesUrl: "https://github.com/antimatt3r/pixelchemy/issues",
 
   // Optional Notice / Banner:
   // Set to null to disable notices completely, or use one of the two standard variants:

@@ -52,6 +52,17 @@
       description: "A lightweight control plane that manages multi-node Docker deployments with simple YAML definitions, NAS-based failover, reverse proxy synchronization, and live update tracking—without the overhead of Kubernetes. Specially built for unreliable, hetrogenous and cheap infra."
       links: {}
 
+    - title: "PaperStation"
+      tags: ["Self-Hosted", "Web"]
+      tagline: "Resilient home print orchestrator and document transformation service"
+      description: "A multi-tier print orchestrator and document processing pipeline that normalizes uploads, performs image cleanup and imposition, manages manual duplex printing across local hardware, and provides live status monitoring."
+      features:
+        - "**Network discovery isolation:** Sole public AirPrint/mDNS broadcaster eliminates discovery spam across dynamic KVM nodes."
+        - "**Multi-tier ingestion pipeline:** Auto-routing for monochrome laser, colour ink, and manual duplex drop-folders."
+        - "**Document transformation:** Contrast thresholding, deskew, and 1/2/4-up page imposition with auto-conversion to standard A4."
+        - "**Manual duplex state machine:** SQLite persistence across restarts with printer tray-specific paper flip guidance."
+      links: {}
+
 - category: "Personal Finance"
   projects:
     - title: "Crypto Tax Hub"

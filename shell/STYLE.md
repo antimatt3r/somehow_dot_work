@@ -16,10 +16,37 @@ Paste this document into an AI assistant or use it as a developer guide when bui
 
 ## 2. Design Tokens (`css/tokens.css`)
 
-### Typography
-- **UI Font**: `Geist`, with fallbacks `system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif`.
-- **Monospace Font**: `Geist Mono`, with fallbacks `ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace`. Used for codes, identifiers, metrics, quantities, unit prices, and status badges.
-- **Self-Hosting**: Always self-host `Geist` and `Geist Mono` under a local `fonts/` directory using modern `.woff2` files.
+### Typography & Typeface Customization
+The shell defines font stacks using CSS custom properties in `tokens.css`:
+```css
+:root {
+  /* UI Font: e.g. Geist, Inter, Plus Jakarta Sans, Outfit */
+  --font-sans: 'Geist', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Machine / Data Font: e.g. Geist Mono, JetBrains Mono, Space Mono, Fira Code */
+  --font-mono: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+```
+
+- **Changing Fonts**: Simply override `--font-sans` or `--font-mono` in your app's stylesheet or `:root` block.
+- **Utility Classes**: `.font-sans` maps to `var(--font-sans)`, and `.font-mono`, `code`, `kbd`, `.meta-data` map to `var(--font-mono)`.
+- **Tailwind Integration**: Map the custom properties into your `tailwind.config.js`:
+  ```javascript
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['var(--font-sans)'],
+        mono: ['var(--font-mono)'],
+      }
+    }
+  }
+  ```
+- **Streamlit Integration**: In Streamlit apps (`.streamlit/config.toml`), configure the base font family:
+  ```toml
+  [theme]
+  font = "sans serif" # or inject custom CSS with st.markdown("<style>:root { --font-sans: ...; }</style>", unsafe_allow_html=True)
+  ```
+- **Self-Hosting**: Always self-host fonts under a local `fonts/` directory using modern `.woff2` files to prevent external CDN render-blocking.
 
 ### Theme & Palette Tokens
 - **Accent**: `#3b82f6` (hover `#2563eb`). Consistent primary accent across all network apps.
@@ -81,9 +108,10 @@ window.SITE_CONFIG = {
 ## 4. Reusable Shell Web Components (`js/shell.js`)
 
 1. **`<app-header>`**:
-   - Left: Wordmark in Geist semibold (`{namePlain}<span class="brand-accent">{nameAccent}</span>`) and subtitle in muted text.
+   - Left: Wordmark styled completely in primary brand accent (`var(--color-accent)` #3b82f6) with `-0.02em` tracking, and subtitle in muted text.
    - Right: Unobtrusive `<status-label>` and a small link to `somehow.work` in Geist Mono.
    - 1px bottom border.
+   - On mobile ($\le 640\text{px}$), the header compresses onto a single row and hides the subtitle to keep the primary action above the fold.
 2. **`<status-label>`**:
    - Zero visual footprint when `ready`.
    - Displays unobtrusive status during `connecting` or `error` with a `Retry` action.
@@ -94,7 +122,9 @@ window.SITE_CONFIG = {
 4. **`<app-footer>`**:
    - Viewport-pinned sticky footer (`margin-top: auto`).
    - Left: `© {currentYear} somehow.work. All rights reserved.`
-   - Right: Renders `GitHub` and/or `Report an Issue` only when configured in `SITE_CONFIG`. If a project is closed source, GitHub is automatically omitted without formatting glitches.
+   - Right: Standardized link rendering:
+     - **Open Source (`openSource: true`)**: Renders `GitHub` link to `github.com/antimatt3r/{appname}` and `Report an Issue` pointing to GitHub issues.
+     - **Closed Source (`openSource: false` or omitted)**: Omits the `GitHub` link, and renders `Report an Issue` as `mailto:report-{appname}@somehow.work`.
 
 ---
 

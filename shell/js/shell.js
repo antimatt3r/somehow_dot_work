@@ -122,8 +122,9 @@
 
   /**
    * <app-footer>
-   * Pinned application footer with dynamic year and optional links.
-   * Renders GitHub and Issues links only when configured.
+   * Pinned application footer with dynamic year and standardized links.
+   * - If openSource: true (or repoUrl is explicitly set), displays GitHub + Report an Issue link.
+   * - If not open-source, omits GitHub and provides "Report an Issue" as mailto:report-<appname>@somehow.work.
    */
   class AppFooter extends HTMLElement {
     connectedCallback() {
@@ -132,11 +133,26 @@
       const year = new Date().getFullYear();
       const links = [];
 
-      if (config.repoUrl) {
-        links.push(`<a href="${config.repoUrl}" target="_blank" rel="noopener">GitHub</a>`);
-      }
-      if (config.issuesUrl) {
-        links.push(`<a href="${config.issuesUrl}" target="_blank" rel="noopener">Report an Issue</a>`);
+      // Determine open source status:
+      // Can be explicitly configured via config.openSource (boolean),
+      // or implicitly determined if config.repoUrl is provided.
+      const isOpenSource = (config.openSource === true) || Boolean(config.repoUrl);
+
+      // Determine clean app identifier for email (e.g., "print-station" or "printstation")
+      const rawName = (config.namePlain || config.name || "app")
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-+|-+$/g, "");
+
+      if (isOpenSource) {
+        const repoUrl = config.repoUrl || `https://github.com/antimatt3r/${rawName}`;
+        const issuesUrl = config.issuesUrl || `${repoUrl}/issues`;
+
+        links.push(`<a href="${repoUrl}" target="_blank" rel="noopener">GitHub</a>`);
+        links.push(`<a href="${issuesUrl}" target="_blank" rel="noopener">Report an Issue</a>`);
+      } else {
+        const mailtoUrl = config.issuesUrl || `mailto:report-${rawName}@somehow.work`;
+        links.push(`<a href="${mailtoUrl}">Report an Issue</a>`);
       }
 
       const linksHtml = links.length > 0

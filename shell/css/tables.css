@@ -99,6 +99,36 @@ tbody tr:hover {
   margin-left: 2px;
 }
 
+/* Tabular Feed Card Helpers (Desktop Defaults) */
+.feed-line-primary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.feed-title {
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.feed-badge-mobile {
+  display: none;
+}
+
+.feed-line-secondary {
+  display: none;
+}
+
+.mobile-only {
+  display: none;
+}
+
+.meta-separator {
+  color: var(--color-text-muted);
+  opacity: 0.6;
+  margin: 0 4px;
+}
+
 /* ==========================================================================
    Mobile Responsive Transformation (<= 640px)
    Transforms multi-column tables into accessible stacked cards
@@ -124,6 +154,7 @@ tbody tr:hover {
     border-radius: var(--radius-lg);
     padding: var(--space-3);
     margin-bottom: var(--space-3);
+    position: relative;
   }
 
   tbody tr:last-child {
@@ -136,6 +167,19 @@ tbody tr:hover {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+  }
+
+  /* Responsive Cell Utility Classes */
+  .cell-hide-mobile {
+    display: none !important;
+  }
+
+  .cell-show-mobile {
+    display: flex !important;
+  }
+
+  .mobile-only {
+    display: inline !important;
   }
 
   /* Dominant primary title */
@@ -155,8 +199,50 @@ tbody tr:hover {
     display: block;
   }
 
+  /* Feed-Style Card Layouts */
+  .feed-line-primary {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--space-2);
+    width: 100%;
+  }
+
+  .feed-title {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-text);
+    flex: 1;
+    word-break: break-word;
+  }
+
+  .feed-badge-mobile {
+    display: inline-flex;
+    flex-shrink: 0;
+  }
+
+  .feed-line-secondary {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4px;
+    font-size: var(--text-xs);
+    color: var(--color-text-subtle);
+    margin-top: 4px;
+  }
+
+  .feed-actions {
+    display: flex !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+    width: 100% !important;
+    margin-top: var(--space-2);
+    padding-top: var(--space-2) !important;
+    border-top: 1px solid var(--color-border-subtle) !important;
+  }
+
   /* Add data-label pseudo elements for labeled fields on mobile */
-  td[data-label]::before {
+  td[data-label]:not(.no-label)::before {
     content: attr(data-label);
     font-size: 11px;
     color: var(--color-text-muted);

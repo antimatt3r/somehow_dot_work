@@ -22,10 +22,28 @@
       </header>
       <p class="project-tagline">{{ .tagline }}</p>
       <p class="project-description">{{ .description }}</p>
-      {{ if .links }}
+      {{ with .features }}
+      <details class="project-features">
+        <summary class="features-toggle">Key capabilities</summary>
+        <ul class="features-list">
+          {{ range . }}
+            <li>{{ . | markdownify }}</li>
+          {{ end }}
+        </ul>
+      </details>
+      {{ end }}
+      {{ if or .links .screenshots }}
       <nav class="project-links">
         {{ range $key, $url := .links }}
           <a href="{{ $url }}" class="project-link" target="_blank" rel="noopener">{{ $key | humanize }}</a>
+        {{ end }}
+        {{ if .screenshots }}
+          <button type="button"
+                  class="project-link screenshot-trigger"
+                  data-title="{{ .title }}"
+                  data-screenshots='{{ .screenshots | jsonify }}'>
+            Screenshots ({{ len .screenshots }})
+          </button>
         {{ end }}
       </nav>
       {{ end }}

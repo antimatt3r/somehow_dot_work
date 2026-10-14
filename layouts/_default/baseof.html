@@ -22,5 +22,9 @@
   </main>
   
   {{ partial "footer.html" . }}
+  {{ partial "lightbox.html" . }}
+
+  {{ $lightboxJs := resources.Get "js/lightbox.js" | minify | fingerprint }}
+  <script src="{{ $lightboxJs.RelPermalink }}" integrity="{{ $lightboxJs.Data.Integrity }}" defer></script>
 </body>
 </html>

@@ -1,0 +1,23 @@
+<dialog id="lightbox-modal" class="lightbox-modal" aria-label="Screenshots Lightbox">
+  <div class="lightbox-container">
+    <div class="lightbox-header">
+      <span class="lightbox-title" id="lightbox-title"></span>
+      <div class="lightbox-meta">
+        <span class="lightbox-counter" id="lightbox-counter"></span>
+        <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Close dialog">&times;</button>
+      </div>
+    </div>
+    <div class="lightbox-stage">
+      <button type="button" class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous image">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      </button>
+      <div class="lightbox-figure-wrap">
+        <img id="lightbox-img" class="lightbox-img" src="" alt="" />
+        <p id="lightbox-caption" class="lightbox-caption" hidden></p>
+      </div>
+      <button type="button" class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next image">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </button>
+    </div>
+  </div>
+</dialog>

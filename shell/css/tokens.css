@@ -91,8 +91,10 @@
   --color-surface-hover: #f1f5f9;
   --color-border: #e2e8f0;
   --color-border-subtle: #edf2f7;
+  /* Text Tokens */
   --color-text: #0f172a;
   --color-text-muted: #64748b; /* WCAG AA: 4.6:1 contrast on white */
+  --color-text-subtle: #64748b; /* Secondary labels & card metadata */
 
   /* Notice: Medical / Financial Disclaimer (Muted Amber) */
   --color-notice-disclaimer-bg: #fffbeb;
@@ -118,6 +120,32 @@
   --color-success: #16a34a;
   --color-success-bg: #f0fdf4;
   --color-success-border: #bbf7d0;
+
+  /* Status Badge Tokens (Light) */
+  --badge-ready-bg: #ecfdf5;
+  --badge-ready-text: #065f46;
+  --badge-ready-border: #a7f3d0;
+  --badge-ready-dot: #10b981;
+
+  --badge-busy-bg: #eff6ff;
+  --badge-busy-text: #1e40af;
+  --badge-busy-border: #bfdbfe;
+  --badge-busy-dot: #3b82f6;
+
+  --badge-warning-bg: #fffbeb;
+  --badge-warning-text: #92400e;
+  --badge-warning-border: #fde68a;
+  --badge-warning-dot: #f59e0b;
+
+  --badge-danger-bg: #fef2f2;
+  --badge-danger-text: #991b1b;
+  --badge-danger-border: #fecaca;
+  --badge-danger-dot: #ef4444;
+
+  --badge-neutral-bg: #f8fafc;
+  --badge-neutral-text: #64748b;
+  --badge-neutral-border: #cbd5e1;
+  --badge-neutral-dot: #94a3b8;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -129,6 +157,7 @@
     --color-border-subtle: #1c2840;
     --color-text: #f8fafc;
     --color-text-muted: #94a3b8; /* WCAG AA: 5.5:1 contrast */
+    --color-text-subtle: #cbd5e1; /* OLED luminance bump for dark card metadata */
 
     --color-accent: #3b82f6;
     --color-accent-hover: #60a5fa;
@@ -159,5 +188,31 @@
     --color-success: #4ade80;
     --color-success-bg: rgba(34, 197, 94, 0.1);
     --color-success-border: rgba(34, 197, 94, 0.3);
+
+    /* Status Badge Tokens (Dark) */
+    --badge-ready-bg: rgba(16, 185, 129, 0.12);
+    --badge-ready-text: #6ee7b7;
+    --badge-ready-border: rgba(16, 185, 129, 0.3);
+    --badge-ready-dot: #10b981;
+
+    --badge-busy-bg: rgba(59, 130, 246, 0.12);
+    --badge-busy-text: #93c5fd;
+    --badge-busy-border: rgba(59, 130, 246, 0.3);
+    --badge-busy-dot: #3b82f6;
+
+    --badge-warning-bg: rgba(245, 158, 11, 0.12);
+    --badge-warning-text: #fcd34d;
+    --badge-warning-border: rgba(245, 158, 11, 0.3);
+    --badge-warning-dot: #f59e0b;
+
+    --badge-danger-bg: rgba(239, 68, 68, 0.12);
+    --badge-danger-text: #fca5a5;
+    --badge-danger-border: rgba(239, 68, 68, 0.3);
+    --badge-danger-dot: #ef4444;
+
+    --badge-neutral-bg: rgba(148, 163, 184, 0.1);
+    --badge-neutral-text: #cbd5e1;
+    --badge-neutral-border: rgba(148, 163, 184, 0.25);
+    --badge-neutral-dot: #94a3b8;
   }
 }
